@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:elevation="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/skin">
+        <ImageView
+            android:id="@+id/product_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/notepad"
+            android:scaleType="fitCenter"/>
+        <TextView
+            android:id="@+id/product_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="New Notepad book"
+            android:textColor="@color/black"
+            android:layout_toEndOf="@id/product_image"/>
+        <TextView
+            android:id="@+id/product_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginStart="20dp"
+            android:text="Rs 1000"
+            android:textColor="@color/black"
+            android:layout_below="@id/product_name"
+            android:layout_toEndOf="@id/product_image"/>
+
+        <TextView
+            android:id="@+id/product_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginStart="20dp"
+            android:text="New Delhi"
+            android:textColor="@color/black"
+            android:layout_toLeftOf="@id/remove_product"
+            android:layout_below="@id/product_price"
+            android:layout_toEndOf="@id/product_image"/>
+        <Button
+            android:id="@+id/remove_product"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:background="@drawable/signup_btn"
+            android:text="Delete"
+            android:backgroundTint="#E40D0D"
+            android:layout_marginEnd="@dimen/marginEnd"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/white"
+            android:layout_below="@id/product_price"/>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.Profile">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="175dp"
+                android:elevation="10dp"
+                android:background="@drawable/profile_top_bar">
+
+                <ImageView
+                    android:id="@+id/profileBackBtn"
+                    android:layout_width="70dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_back_arrow"
+                    android:layout_marginTop="20dp"/>
+
+                <Button
+                    android:id="@+id/saveBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_alignParentEnd="true"
+                    android:text="Save"
+                    android:elevation="6dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/profile_circle"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/saveBtn"
+                    android:textStyle="bold"
+                    android:text="Faizan Ali"
+                    android:elevation="15dp"
+                    android:textSize="25sp"
+                    android:textColor="@color/white"
+                    android:gravity="center"/>
+            </RelativeLayout>
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:background="@drawable/profile_circle"
+                android:src="@drawable/gut"
+                android:elevation="15dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="-70dp"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name"
+                android:layout_marginTop="@dimen/marginTop"
+                app:boxStrokeColor="@color/darkBlue"
+                android:layout_marginBottom="@dimen/marginBottom"
+                android:layout_marginStart="@dimen/marginStart"
+                android:layout_marginEnd="@dimen/marginEnd"
+                android:elevation="@dimen/loginElevation"
+                android:hint="Your email"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvEmail"
+                    android:text="faizan.fa76@gmail.com"
+                    android:editable="false"
+                    android:textSize="16sp"
+                    android:inputType="textEmailAddress"
+                    android:drawableEnd="@drawable/ic_email"
+                    android:textColor="@color/black"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name"
+                app:boxStrokeColor="@color/darkBlue"
+                android:layout_marginBottom="@dimen/marginBottom"
+                android:layout_marginStart="@dimen/marginStart"
+                android:layout_marginEnd="@dimen/marginEnd"
+                android:elevation="@dimen/loginElevation"
+                android:hint="Area"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <AutoCompleteTextView
+                    android:id="@+id/actv"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:textSize="16sp"
+                    android:text="Uttam Nagar"
+                    android:drawableEnd="@drawable/ic_location"
+                    android:padding="10dp"
+                    android:completionHint="Select Area"
+                    android:completionThreshold="1"
+                    android:popupBackground="@color/white"/>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/email"
+                app:boxStrokeColor="@color/darkBlue"
+                android:layout_marginBottom="@dimen/marginBottom"
+                android:layout_marginStart="@dimen/marginStart"
+                android:layout_marginEnd="@dimen/marginEnd"
+                android:elevation="@dimen/loginElevation"
+                android:hint="Your Location"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvLocation"
+                    android:text="Delhi"
+                    android:textSize="16sp"
+                    android:inputType="text"
+                    android:drawableEnd="@drawable/ic_location"
+                    android:textColor="@color/black"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/phoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/location"
+                app:boxStrokeColor="@color/darkBlue"
+
+                android:layout_marginBottom="@dimen/marginBottom"
+                android:layout_marginStart="@dimen/marginStart"
+                android:layout_marginEnd="@dimen/marginEnd"
+                android:elevation="@dimen/loginElevation"
+                android:hint="Your phone number"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvPhone"
+                    android:inputType="phone"
+                    android:text="9891494325"
+                    android:textSize="16sp"
+                    android:maxLength="10"
+                    android:drawableEnd="@drawable/ic_phone"
+                    android:textColor="@color/black"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

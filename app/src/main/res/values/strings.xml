@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Bookandar Test</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--    Login Strings-->
+    <string name="phone">Enter phone number</string>
+    <string name="password">Enter password</string>
+    <string name="login">Login</string>
+    <string name="forget">Forget Password ?</string>
+    <string name="newUser">Don\'t have an account yet?</string>
+    <string name="SignUP">Sign Up</string>
+
+    <!--    SignUp Strings-->
+
+    <string name="signName">Enter Full name</string>
+    <string name="signEmail">Enter email</string>
+    <string name="signPhone">Enter phone number</string>
+    <string name="signLocation">Enter Location</string>
+    <string name="signPassword">Enter password</string>
+    <string name="signUp">Create an Account</string>
+    <string name="oldUser">Already have an account?</string>
+    <string name="longString">Already have an account?\nAlready have an account?\nAlready have an account?\nAlready have an account?\nAlready have an account?\nAlready have an account?\nAlready have an account?\nAlready have an account?\nAlready have an account?\nAlready have an account?\n</string>
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<!--    Welcome-->
+    <dimen name="welMarginTop">10dp</dimen>
+    <dimen name="welMarginBottom">20dp</dimen>
+    <dimen name="welMarginStart">20dp</dimen>
+    <dimen name="welMarginEnd">20dp</dimen>
+    <dimen name="welBtnSize">20sp</dimen>
+    <dimen name="welBtnPadding">10sp</dimen>
+
+<!--    Login-->
+    <dimen name="marginTop">14dp</dimen>
+    <dimen name="marginBottom">10dp</dimen>
+    <dimen name="marginEnd">20dp</dimen>
+    <dimen name="marginStart">20dp</dimen>
+    <dimen name="btnTextSize">20sp</dimen>
+    <dimen name="loginElevation">12dp</dimen>
+    <dimen name="topBarLoginElevation">15dp</dimen>
+    <dimen name="titleTextSize">25sp</dimen>
+    <dimen name="drawablePadding">10dp</dimen>
+    <dimen name="imageHeight">200dp</dimen>
+    <dimen name="imageMarginTop">20dp</dimen>
+    <dimen name="imageMarginBottom">30dp</dimen>
+</resources>
