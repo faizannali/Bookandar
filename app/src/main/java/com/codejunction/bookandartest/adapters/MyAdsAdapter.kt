@@ -18,6 +18,7 @@ class MyAdsAdapter(private val c: Context, private val myAdsList:ArrayList<MyAds
             itemView.myAds_product_name.text=myAdsModel.myNameOfProduct
             itemView.myAds_product_price.text=myAdsModel.myPriceOfProduct
             itemView.myAds_product_location.text=myAdsModel.myLocationOfProduct
+            itemView.myAdsViews.text=myAdsModel.myViewOnProduct
         }
 
     }

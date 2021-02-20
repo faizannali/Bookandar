@@ -57,6 +57,20 @@
             android:layout_toLeftOf="@id/remove_product"
             android:layout_below="@id/myAds_product_price"
             android:layout_toEndOf="@id/my_product_image"/>
+        <TextView
+            android:id="@+id/myAdsViews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginTop="5dp"
+            android:maxLines="1"
+            android:text="100"
+            android:drawableStart="@drawable/ic_views"
+            android:textColor="@color/black"
+            android:drawablePadding="3dp"
+            android:layout_toLeftOf="@id/remove_product"
+            android:layout_below="@id/myAds_product_location"
+            android:layout_toEndOf="@id/my_product_image"/>
 
         <Button
             android:id="@+id/editProductBtn"

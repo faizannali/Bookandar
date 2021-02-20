@@ -102,6 +102,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
                     android:textSize="16sp"
+                    android:textColor="@color/black"
                     android:text="Uttam Nagar"
                     android:drawableEnd="@drawable/ic_location"
                     android:padding="10dp"

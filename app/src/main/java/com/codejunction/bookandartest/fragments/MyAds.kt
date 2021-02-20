@@ -36,9 +36,9 @@ class MyAds : Fragment() {
         }
 
         val defaultAdList=ArrayList<MyAdsModel>()
-        defaultAdList.add(MyAdsModel("My new notepad", "Rs 100","Uttam Nagar"))
-        defaultAdList.add(MyAdsModel("My old Science Book", "Rs 100","Tilak Nagar"))
-
+        defaultAdList.add(MyAdsModel("My new notepad", "Rs 100","Uttam Nagar","100"))
+        defaultAdList.add(MyAdsModel("My old Science Book", "Rs 100","Tilak Nagar","50"))
+        defaultAdList.add(MyAdsModel("My old Science Book", "Rs 100","Tilak Nagar","100"))
 
         myAdsRecycler.layoutManager= LinearLayoutManager(
             requireContext(),

@@ -12,7 +12,6 @@ import com.codejunction.bookandartest.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,13 +22,23 @@ class MainActivity : AppCompatActivity() {
 
         nestedScroll.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
             if (v.scrollY > oldScrollY) {
-                fab.hide();
+                sellBook.hide();
             } else if (v.scrollX < oldScrollY || v.scrollY <= 0) {
-                fab.show();
+                sellBook.show();
             }
 //            oldScrollY = v.scrollY
         }
 
+        sellBook.setOnClickListener {
+            openSellActivity()
+        }
+
+    }
+
+    private fun openSellActivity(){
+        val intent=Intent(this,SellBooks::class.java)
+        startActivity(intent)
+        finish()
     }
 
 
