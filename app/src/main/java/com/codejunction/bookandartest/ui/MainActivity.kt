@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         navController=findNavController(R.id.hostFragment)
         bottom_navigation.setupWithNavController(navController)
 
-        nestedScroll.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
+        nestedScroll.setOnScrollChangeListener { v, _, _, _, oldScrollY ->
             if (v.scrollY > oldScrollY) {
                 sellBook.hide();
             } else if (v.scrollX < oldScrollY || v.scrollY <= 0) {

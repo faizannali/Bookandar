@@ -4,14 +4,82 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.Home">
+    tools:context=".fragments.Home"
+    android:background="#F8F5F1">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:textSize="50sp"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/longString" />
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Location"
+            android:fontFamily="@font/century_gothic"
+            android:textColor="@color/purple"
+           android:layout_centerHorizontal="true"
+            android:elevation="10dp"
+            android:textSize="17sp"/>
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/location"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:text="New Delhi"
+            android:drawableStart="@drawable/ic_location"
+            android:textSize="20sp"
+            android:elevation="10dp"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:id="@+id/searchBar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Search Book.."
+            android:drawableStart="@drawable/ic_search"
+            android:background="@drawable/search_bar"
+            android:drawablePadding="5dp"
+            android:layout_margin="10dp"
+            android:elevation="8dp"
+            android:textColorHint="@color/black"
+            android:layout_below="@id/tv_location"
+            android:textSize="20sp"/>
+
+<!--        yha pr slider image lgani hai-->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/slider"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:cardCornerRadius="10dp"
+            android:layout_margin="10dp"
+            android:layout_below="@id/searchBar"
+            android:background="@drawable/gut"
+            android:elevation="10dp"
+            android:backgroundTint="#232F3C">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/beti_padhao"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/categoriesRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="10dp"
+            android:layout_below="@id/slider"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/productRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/product_card_layout"
+            android:layout_below="@id/categoriesRecycler"/>
+
+
+    </RelativeLayout>
 
 
 </FrameLayout>
