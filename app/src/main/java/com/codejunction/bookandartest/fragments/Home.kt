@@ -14,7 +14,6 @@ import com.codejunction.bookandartest.adapters.CategoriesAdapter
 import com.codejunction.bookandartest.adapters.HomeAdapterProduct
 import com.codejunction.bookandartest.data.CategoriesModel
 import com.codejunction.bookandartest.data.HomeProductModel
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
@@ -40,9 +39,9 @@ class Home : Fragment() {
         defaultAdList.add(CategoriesModel("Romance","#FD9519"))
         defaultAdList.add(CategoriesModel("College","#fcf3e4"))
 
-        categoriesRecycler.layoutManager= LinearLayoutManager(
-            requireContext(),
-            LinearLayoutManager.HORIZONTAL,
+        categoriesRecycler.layoutManager= GridLayoutManager(
+            requireContext(),4,
+            LinearLayoutManager.VERTICAL,
             false
         )
 
@@ -50,7 +49,6 @@ class Home : Fragment() {
         categoriesRecycler.adapter=myCategoryAdapter
 
         init()
-
 
     }
 
