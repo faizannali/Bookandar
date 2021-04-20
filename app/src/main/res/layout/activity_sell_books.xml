@@ -82,7 +82,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="150dp"
                     android:id="@+id/tvDescOfBook"
                     android:textSize="16sp"
                     android:gravity="top"
@@ -194,7 +194,7 @@
             </RadioGroup>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/bookPrice"
+                android:id="@+id/etBookPrice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/radioGroup"
@@ -219,7 +219,7 @@
                 android:id="@+id/phoneNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/bookPrice"
+                android:layout_below="@+id/etBookPrice"
                 app:boxStrokeColor="@color/darkBlue"
                 android:layout_marginStart="@dimen/marginStart"
                 android:layout_marginEnd="@dimen/marginEnd"
@@ -259,8 +259,5 @@
 
         </RelativeLayout>
     </ScrollView>
-
-
-
 
 </LinearLayout>

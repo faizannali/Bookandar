@@ -9,4 +9,5 @@
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="skin">#fcf3e4</color>
+    <color name="darkSkin">#EACEA0</color>
 </resources>

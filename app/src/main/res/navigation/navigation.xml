@@ -7,22 +7,22 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.codejunction.bookandartest.fragments.Home"
+        android:name="com.codejunction.bookandaar.fragments.Home"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/myAds"
-        android:name="com.codejunction.bookandartest.fragments.MyAds"
+        android:name="com.codejunction.bookandaar.fragments.MyAds"
         android:label="fragment_my_ads"
         tools:layout="@layout/fragment_my_ads" />
     <fragment
         android:id="@+id/profile"
-        android:name="com.codejunction.bookandartest.fragments.Profile"
+        android:name="com.codejunction.bookandaar.fragments.Profile"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/favourite"
-        android:name="com.codejunction.bookandartest.fragments.Favourite"
+        android:name="com.codejunction.bookandaar.fragments.Favourite"
         android:label="fragment_favourite"
         tools:layout="@layout/fragment_favourite" />
 </navigation>

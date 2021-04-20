@@ -59,6 +59,7 @@
             android:elevation="10dp"
             android:backgroundTint="#232F3C">
             <ImageView
+                android:id="@+id/imageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

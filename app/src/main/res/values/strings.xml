@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Bookandar Test</string>
+    <string name="app_name">Bookandaar</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -20,5 +20,6 @@
     <string name="signPassword">Enter password</string>
     <string name="signUp">Create an Account</string>
     <string name="oldUser">Already have an account?</string>
-    <string name="longString">Already have an account?\nAlready have an account?\nAlready have an account?\nAlready have an account?\nAlready have an account?\nAlready have an account?\nAlready have an account?\nAlready have an account?\nAlready have an account?\nAlready have an account?\n</string>
+    <string name="longString">This is my long description of my book. I bought it from here and
+    all default text is here.</string>
 </resources>

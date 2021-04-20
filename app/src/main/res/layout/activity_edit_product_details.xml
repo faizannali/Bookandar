@@ -7,256 +7,258 @@
     android:layout_height="match_parent"
     tools:context=".ui.EditProductDetails">
 
-<!--    <RelativeLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="70dp"-->
-<!--        android:elevation="10dp"-->
-<!--        android:background="@drawable/profile_top_bar">-->
+    <RelativeLayout
+        android:id="@+id/editDetailsToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:elevation="10dp"
+        android:background="@drawable/profile_top_bar">
 
-<!--        <ImageView-->
-<!--            android:id="@+id/editBackBtn"-->
-<!--            android:layout_width="70dp"-->
-<!--            android:layout_height="32dp"-->
-<!--            android:src="@drawable/ic_back_arrow"-->
-<!--            android:layout_marginTop="20dp"/>-->
+        <ImageView
+            android:id="@+id/editProductBackBtn"
+            android:layout_width="70dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_back_arrow"
+            android:layout_marginTop="20dp"/>
 
-<!--        <TextView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_toEndOf="@+id/sellBackBtn"-->
-<!--            android:textStyle="bold"-->
-<!--            android:layout_marginTop="15dp"-->
-<!--            android:text="Edit Details of Book"-->
-<!--            android:elevation="15dp"-->
-<!--            android:textSize="25sp"-->
-<!--            android:textColor="@color/white"-->
-<!--            android:gravity="start"/>-->
-<!--    </RelativeLayout>-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/editProductBackBtn"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:text="Edit Details of Book"
+            android:elevation="15dp"
+            android:textSize="25sp"
+            android:textColor="@color/white"
+            android:gravity="start"/>
+    </RelativeLayout>
 
-<!--    <ScrollView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content">-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editDetailsToolbar">
 
-<!--        <RelativeLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent">-->
-<!--            <com.google.android.material.textfield.TextInputLayout-->
-<!--                android:id="@+id/nameOfBook"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                app:counterEnabled="true"-->
-<!--                app:counterMaxLength="50"-->
-<!--                android:layout_marginTop="@dimen/marginTop"-->
-<!--                app:boxStrokeColor="@color/darkBlue"-->
-<!--                android:layout_marginBottom="@dimen/marginBottom"-->
-<!--                android:layout_marginStart="@dimen/marginStart"-->
-<!--                android:layout_marginEnd="@dimen/marginEnd"-->
-<!--                android:elevation="@dimen/loginElevation"-->
-<!--                android:hint="Name of the book"-->
-<!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/updatedNameOfBook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:counterEnabled="true"
+                app:counterMaxLength="50"
+                android:layout_marginTop="@dimen/marginTop"
+                app:boxStrokeColor="@color/darkBlue"
+                android:layout_marginBottom="@dimen/marginBottom"
+                android:layout_marginStart="@dimen/marginStart"
+                android:layout_marginEnd="@dimen/marginEnd"
+                android:elevation="@dimen/loginElevation"
+                android:hint="Name of the book"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-<!--                <com.google.android.material.textfield.TextInputEditText-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:id="@+id/tvNameOfBook"-->
-<!--                    android:textSize="16sp"-->
-<!--                    android:textColor="@color/black"/>-->
-<!--            </com.google.android.material.textfield.TextInputLayout>-->
-<!--            <com.google.android.material.textfield.TextInputLayout-->
-<!--                android:id="@+id/descOfBook"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                app:boxStrokeColor="@color/darkBlue"-->
-<!--                android:layout_below="@id/nameOfBook"-->
-<!--                app:counterEnabled="true"-->
-<!--                app:counterMaxLength="150"-->
-<!--                android:layout_marginBottom="@dimen/marginBottom"-->
-<!--                android:layout_marginStart="@dimen/marginStart"-->
-<!--                android:layout_marginEnd="@dimen/marginEnd"-->
-<!--                android:elevation="@dimen/loginElevation"-->
-<!--                android:hint="Description of the book"-->
-<!--                app:errorEnabled="true"-->
-<!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">-->
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvUpdatedNameOfBook"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/updatedDescOfBook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxStrokeColor="@color/darkBlue"
+                android:layout_below="@id/updatedNameOfBook"
+                app:counterEnabled="true"
+                app:counterMaxLength="150"
+                android:layout_marginBottom="@dimen/marginBottom"
+                android:layout_marginStart="@dimen/marginStart"
+                android:layout_marginEnd="@dimen/marginEnd"
+                android:elevation="@dimen/loginElevation"
+                android:hint="Description of the book"
+                app:errorEnabled="true"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-<!--                <com.google.android.material.textfield.TextInputEditText-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:id="@+id/tvDescOfBook"-->
-<!--                    android:textSize="16sp"-->
-<!--                    android:gravity="top"-->
-<!--                    android:inputType="text|textMultiLine"-->
-<!--                    android:textColor="@color/black"/>-->
-<!--            </com.google.android.material.textfield.TextInputLayout>-->
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:id="@+id/tvUpdatedDescOfBook"
+                    android:textSize="16sp"
+                    android:gravity="top"
+                    android:inputType="text|textMultiLine"
+                    android:textColor="@color/black"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-<!--            <com.google.android.material.textfield.TextInputLayout-->
-<!--                android:id="@+id/genre"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_below="@+id/descOfBook"-->
-<!--                app:boxStrokeColor="@color/darkBlue"-->
-<!--                android:layout_marginBottom="@dimen/marginBottom"-->
-<!--                android:layout_marginStart="@dimen/marginStart"-->
-<!--                android:layout_marginEnd="@dimen/marginEnd"-->
-<!--                android:elevation="@dimen/loginElevation"-->
-<!--                android:hint="Genre"-->
-<!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/updatedGenre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/updatedDescOfBook"
+                app:boxStrokeColor="@color/darkBlue"
+                android:layout_marginBottom="@dimen/marginBottom"
+                android:layout_marginStart="@dimen/marginStart"
+                android:layout_marginEnd="@dimen/marginEnd"
+                android:elevation="@dimen/loginElevation"
+                android:hint="Genre"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-<!--                <AutoCompleteTextView-->
-<!--                    android:id="@+id/tvGenre"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="55dp"-->
-<!--                    android:textSize="16sp"-->
-<!--                    android:textColor="@color/black"-->
-<!--                    android:padding="10dp"-->
-<!--                    android:completionThreshold="1"-->
-<!--                    android:popupBackground="@color/white"/>-->
-
-
-<!--            </com.google.android.material.textfield.TextInputLayout>-->
-
-<!--            <com.google.android.material.textfield.TextInputLayout-->
-<!--                android:id="@+id/bookLocation"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginTop="10dp"-->
-<!--                android:layout_below="@+id/genre"-->
-<!--                app:boxStrokeColor="@color/darkBlue"-->
-<!--                android:layout_marginBottom="@dimen/marginBottom"-->
-<!--                android:layout_marginStart="@dimen/marginStart"-->
-<!--                android:layout_marginEnd="@dimen/marginEnd"-->
-<!--                android:elevation="@dimen/loginElevation"-->
-<!--                android:hint="Location"-->
-<!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">-->
-
-<!--                <com.google.android.material.textfield.TextInputEditText-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:id="@+id/tvBookStateLocation"-->
-<!--                    android:text="Delhi"-->
-<!--                    android:textSize="16sp"-->
-<!--                    android:inputType="text"-->
-<!--                    android:textColor="@color/black"/>-->
-<!--            </com.google.android.material.textfield.TextInputLayout>-->
-
-<!--            <com.google.android.material.textfield.TextInputLayout-->
-<!--                android:id="@+id/bookArea"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_below="@+id/bookLocation"-->
-<!--                app:boxStrokeColor="@color/darkBlue"-->
-<!--                android:layout_marginBottom="@dimen/marginBottom"-->
-<!--                android:layout_marginStart="@dimen/marginStart"-->
-<!--                android:layout_marginEnd="@dimen/marginEnd"-->
-<!--                android:elevation="@dimen/loginElevation"-->
-<!--                android:hint="Area"-->
-<!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">-->
-
-<!--                <AutoCompleteTextView-->
-<!--                    android:id="@+id/tvAreaOfBook"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="55dp"-->
-<!--                    android:textSize="16sp"-->
-<!--                    android:textColor="@color/black"-->
-<!--                    android:text="Uttam Nagar"-->
-<!--                    android:padding="10dp"-->
-<!--                    android:completionThreshold="1"-->
-<!--                    android:popupBackground="@color/white"/>-->
+                <AutoCompleteTextView
+                    android:id="@+id/tvUpdatedGenre"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:padding="10dp"
+                    android:completionThreshold="1"
+                    android:popupBackground="@color/white"/>
 
 
-<!--            </com.google.android.material.textfield.TextInputLayout>-->
-<!--            <RadioGroup-->
-<!--                android:id="@+id/radioGroup"-->
-<!--                android:checkedButton="@+id/radioDonateBtn"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:orientation="horizontal"-->
-<!--                android:layout_marginStart="@dimen/marginStart"-->
-<!--                android:layout_marginEnd="@dimen/marginEnd"-->
-<!--                android:layout_marginBottom="@dimen/marginBottom"-->
-<!--                android:layout_below="@id/bookArea">-->
-<!--                <RadioButton-->
-<!--                    android:id="@+id/radioDonateBtn"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginStart="50dp"-->
-<!--                    android:textSize="16sp"-->
-<!--                    android:text="Donate"/>-->
-<!--                <RadioButton-->
-<!--                    android:id="@+id/radioSellBtn"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:layout_marginStart="50dp"-->
-<!--                    android:textSize="16sp"-->
-<!--                    android:text="Sell"/>-->
+            </com.google.android.material.textfield.TextInputLayout>
 
-<!--            </RadioGroup>-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/updatedBookLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/updatedGenre"
+                app:boxStrokeColor="@color/darkBlue"
+                android:layout_marginBottom="@dimen/marginBottom"
+                android:layout_marginStart="@dimen/marginStart"
+                android:layout_marginEnd="@dimen/marginEnd"
+                android:elevation="@dimen/loginElevation"
+                android:hint="Location"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-<!--            <com.google.android.material.textfield.TextInputLayout-->
-<!--                android:id="@+id/bookPrice"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_below="@id/radioGroup"-->
-<!--                app:boxStrokeColor="@color/darkBlue"-->
-<!--                android:layout_marginBottom="@dimen/marginBottom"-->
-<!--                android:layout_marginStart="@dimen/marginStart"-->
-<!--                android:layout_marginEnd="@dimen/marginEnd"-->
-<!--                android:elevation="@dimen/loginElevation"-->
-<!--                android:hint="Price of Book"-->
-<!--                android:visibility="gone"-->
-<!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">-->
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvUpdatedBookStateLocation"
+                    android:text="Delhi"
+                    android:textSize="16sp"
+                    android:inputType="text"
+                    android:textColor="@color/black"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-<!--                <com.google.android.material.textfield.TextInputEditText-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:id="@+id/tvBookPrice"-->
-<!--                    android:textSize="16sp"-->
-<!--                    android:inputType="number"-->
-<!--                    android:textColor="@color/black"/>-->
-<!--            </com.google.android.material.textfield.TextInputLayout>-->
-<!--            <com.google.android.material.textfield.TextInputLayout-->
-<!--                android:id="@+id/phoneNumber"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_below="@+id/bookPrice"-->
-<!--                app:boxStrokeColor="@color/darkBlue"-->
-<!--                android:layout_marginStart="@dimen/marginStart"-->
-<!--                android:layout_marginEnd="@dimen/marginEnd"-->
-<!--                android:elevation="@dimen/loginElevation"-->
-<!--                android:hint="Your phone number"-->
-<!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/updatedBookArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/updatedBookLocation"
+                app:boxStrokeColor="@color/darkBlue"
+                android:layout_marginBottom="@dimen/marginBottom"
+                android:layout_marginStart="@dimen/marginStart"
+                android:layout_marginEnd="@dimen/marginEnd"
+                android:elevation="@dimen/loginElevation"
+                android:hint="Area"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-<!--                <com.google.android.material.textfield.TextInputEditText-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:id="@+id/tvPhone"-->
-<!--                    android:inputType="phone"-->
-<!--                    android:text="9891494325"-->
-<!--                    android:textSize="16sp"-->
-<!--                    android:maxLength="10"-->
-<!--                    android:drawableEnd="@drawable/ic_phone"-->
-<!--                    android:textColor="@color/black"/>-->
-<!--            </com.google.android.material.textfield.TextInputLayout>-->
+                <AutoCompleteTextView
+                    android:id="@+id/tvUpdatedAreaOfBook"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:text="Uttam Nagar"
+                    android:padding="10dp"
+                    android:completionThreshold="1"
+                    android:popupBackground="@color/white"/>
 
 
-<!--            <androidx.appcompat.widget.AppCompatButton-->
-<!--                android:id="@+id/postAdBtn"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_below="@id/phoneNumber"-->
-<!--                android:layout_marginStart="@dimen/marginStart"-->
-<!--                android:layout_marginTop="@dimen/marginTop"-->
-<!--                android:layout_marginEnd="@dimen/marginEnd"-->
-<!--                android:layout_marginBottom="@dimen/marginBottom"-->
-<!--                android:background="@drawable/signup_btn"-->
-<!--                android:padding="@dimen/drawablePadding"-->
-<!--                android:textStyle="bold"-->
-<!--                android:elevation="@dimen/loginElevation"-->
-<!--                android:text="Post Ad"-->
-<!--                android:textColor="@color/white"-->
-<!--                android:textSize="@dimen/btnTextSize" />-->
+            </com.google.android.material.textfield.TextInputLayout>
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:checkedButton="@+id/radioDonateBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/marginStart"
+                android:layout_marginEnd="@dimen/marginEnd"
+                android:layout_marginBottom="@dimen/marginBottom"
+                android:layout_below="@id/updatedBookArea">
+                <RadioButton
+                    android:id="@+id/updatedRadioDonateBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:textSize="16sp"
+                    android:text="Donate"/>
+                <RadioButton
+                    android:id="@+id/updatedRadioSellBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="50dp"
+                    android:textSize="16sp"
+                    android:text="Sell"/>
 
-<!--        </RelativeLayout>-->
-<!--    </ScrollView>-->
+            </RadioGroup>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/updateBookPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/radioGroup"
+                app:boxStrokeColor="@color/darkBlue"
+                android:layout_marginBottom="@dimen/marginBottom"
+                android:layout_marginStart="@dimen/marginStart"
+                android:layout_marginEnd="@dimen/marginEnd"
+                android:elevation="@dimen/loginElevation"
+                android:hint="Price of Book"
+                android:visibility="visible"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvUpdatedBookPrice"
+                    android:textSize="16sp"
+                    android:inputType="number"
+                    android:textColor="@color/black"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/updatedPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/updateBookPrice"
+                app:boxStrokeColor="@color/darkBlue"
+                android:layout_marginStart="@dimen/marginStart"
+                android:layout_marginEnd="@dimen/marginEnd"
+                android:elevation="@dimen/loginElevation"
+                android:hint="Your phone number"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvPhone"
+                    android:inputType="phone"
+                    android:text="9891494325"
+                    android:textSize="16sp"
+                    android:maxLength="10"
+                    android:drawableEnd="@drawable/ic_phone"
+                    android:textColor="@color/black"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/updateAdBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/updatedPhoneNumber"
+                android:layout_marginStart="@dimen/marginStart"
+                android:layout_marginTop="@dimen/marginTop"
+                android:layout_marginEnd="@dimen/marginEnd"
+                android:layout_marginBottom="@dimen/marginBottom"
+                android:background="@drawable/signup_btn"
+                android:padding="@dimen/drawablePadding"
+                android:textStyle="bold"
+                android:elevation="@dimen/loginElevation"
+                android:text="Update"
+                android:textColor="@color/white"
+                android:textSize="@dimen/btnTextSize" />
+
+        </RelativeLayout>
+    </ScrollView>
 
 
 </RelativeLayout>
