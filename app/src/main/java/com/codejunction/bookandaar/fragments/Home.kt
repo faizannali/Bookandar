@@ -39,8 +39,8 @@ class Home : Fragment() {
         val name=preference.getString("PHONE_NUMBER","")
         val pass= preference.getString("LOGIN","")
 
-        location.text=name
-        tv_location.text=pass
+//        location.text=name
+//        tv_location.text=pass
 
         val defaultAdList=ArrayList<CategoriesModel>()
         defaultAdList.add(CategoriesModel("Novel","#1D7DEF"))

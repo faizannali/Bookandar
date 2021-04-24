@@ -23,16 +23,14 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan">
             <!-- in softInputMode adjustpan -->
-
-
-        </activity>
-        <activity
-            android:name="com.codejunction.bookandaar.ui.Welcome"
-            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.codejunction.bookandaar.ui.Welcome"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name="com.codejunction.bookandaar.auth.SignUp"

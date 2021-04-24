@@ -11,7 +11,7 @@ object RetrofitClient {
 
 //    private const val BASE_URL="https://bookandaar.000webhostapp.com/"
     //private const val BASE_URL="https://api.currentsapi.services"
-    private const val BASE_URL="http://192.168.100.2:3001"
+    private const val BASE_URL="http://192.168.6.1:3001"
 
     private val okHttp=OkHttpClient.Builder()
 

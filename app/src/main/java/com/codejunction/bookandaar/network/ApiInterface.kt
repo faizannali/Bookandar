@@ -1,9 +1,8 @@
 package com.codejunction.bookandaar.network
 
-import com.codejunction.bookandaar.models.HomeProductModel
-import com.codejunction.bookandaar.models.LoginResponse
-import com.codejunction.bookandaar.models.MyAdsModel
+import com.codejunction.bookandaar.repo.DefaultResponse
 import com.codejunction.bookandaar.models.SignUpModel
+import com.codejunction.bookandaar.repo.MyAdsResponse
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -24,7 +23,7 @@ interface ApiInterface {
     fun login(
         @Field("phoneNumber") phone: String,
         @Field("password") password: String
-    ):Call<LoginResponse>
+    ):Call<DefaultResponse>
 
     @FormUrlEncoded
     @POST("/postMyAds")
@@ -36,16 +35,36 @@ interface ApiInterface {
         @Field("bookLocation") bookLocation:String,
         @Field("bookArea") bookArea:String,
         @Field("bookPrice") bookPrice:String,
-    ):Call<LoginResponse>
+    ):Call<DefaultResponse>
+
+    @FormUrlEncoded
+    @POST("/showMyAds")
+    fun showMyAds(
+        @Field("phoneNumber") phone: String
+    ):Call<MyAdsResponse>
+
+    @FormUrlEncoded
+    @POST("/updateMyAds")
+    fun updateMyAds(
+        @Field("bookName") bookName:String,
+        @Field("bookDesc") bookDesc:String,
+        @Field("bookGenre") bookGenre:String,
+        @Field("bookLocation") bookLocation:String,
+        @Field("bookArea") bookArea:String,
+        @Field("bookPrice") bookPrice:String,
+        @Field("orderId") orderId:Int,
+    ):Call<DefaultResponse>
+
+    @FormUrlEncoded
+    @POST("/deleteMyAds")
+    fun deleteMyAds(
+        @Field("phoneNumber") phone: String,
+        @Field("orderId") orderId: Int
+    ):Call<DefaultResponse>
 
 
 //    @GET("/v1/latest-news?language=it&apiKey=7goxs3CKQUAJRGhquf6BovIkIToi_vj5Uii2lTrQCVE9EtY2")
-//    fun getNews() : Call<LoginResponse>
+//    fun getNews() : Call<DefaultResponse>
 
-    @GET("/fetch/bookDetails")
-    fun getNews() : Call<HomeProductModel>
-
-    @GET("/fetch/bookDetails")
-    fun showDetails():Call<MyAdsModel>
 
 }

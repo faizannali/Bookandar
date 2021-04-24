@@ -1,13 +1,12 @@
 package com.codejunction.bookandaar.ui
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
 import com.codejunction.bookandaar.BaseActivity
 import com.codejunction.bookandaar.R
-import com.codejunction.bookandaar.models.LoginResponse
+import com.codejunction.bookandaar.repo.DefaultResponse
 import com.codejunction.bookandaar.network.RetrofitClient
 import kotlinx.android.synthetic.main.activity_sell_books.*
 import retrofit2.Call
@@ -67,7 +66,7 @@ class SellBooks : BaseActivity() {
             bookLocation=tvBookStateLocation.text.toString()
             bookArea=tvAreaOfBook.text.toString()
 
-            if (radioDonateBtn.isSelected){
+            if (radioDonateBtn.isChecked){
                 bookPrice="0"
             }else{
                 bookPrice=tvBookPrice.text.toString()
@@ -90,17 +89,17 @@ class SellBooks : BaseActivity() {
                     else -> {
                         //snackBar(it,"Ready to start Sell Api")
                         RetrofitClient.instance.postMyAds(phoneNum,bookName,bookDesc,bookGenre,
-                            bookLocation,bookArea,bookPrice).enqueue(object :Callback<LoginResponse>{
+                            bookLocation,bookArea,bookPrice).enqueue(object :Callback<DefaultResponse>{
                             override fun onResponse(
-                                call: Call<LoginResponse>,
-                                response: Response<LoginResponse>
+                                call: Call<DefaultResponse>,
+                                response: Response<DefaultResponse>
                             ) {
                                 val msg=response.body()?.message
                                 snackBar(it,msg.toString())
                                 //onBackPressed()
                             }
 
-                            override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                            override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
                                 errorSnackBar(it,"Check internet Connection !")
                             }
 

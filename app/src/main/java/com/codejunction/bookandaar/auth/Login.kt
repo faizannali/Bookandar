@@ -9,11 +9,7 @@ import android.view.View
 import android.widget.Toast
 import com.codejunction.bookandaar.BaseActivity
 import com.codejunction.bookandaar.R
-import com.codejunction.bookandaar.fragments.Home
-import com.codejunction.bookandaar.fragments.MyAds
-import com.codejunction.bookandaar.models.HomeProductModel
-import com.codejunction.bookandaar.models.LoginResponse
-import com.codejunction.bookandaar.models.MyAdsModel
+import com.codejunction.bookandaar.repo.DefaultResponse
 import com.codejunction.bookandaar.network.RetrofitClient
 import com.codejunction.bookandaar.ui.MainActivity
 import com.codejunction.bookandaar.ui.Welcome
@@ -57,15 +53,15 @@ class Login : BaseActivity() {
                     errorSnackBar(contextView,"Enter 10 Digit Number")
                 }else{
                     snackBar(it,"Ready to start api")
-                    RetrofitClient.instance.login(phoneNum,password).enqueue(object :Callback<LoginResponse>{
-                        override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                    RetrofitClient.instance.login(phoneNum,password).enqueue(object :Callback<DefaultResponse>{
+                        override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
                             toaster(t.message.toString())
                             Log.i("faizan",t.message.toString())
                         }
 
                         override fun onResponse(
-                            call: Call<LoginResponse>,
-                            response: Response<LoginResponse>
+                            call: Call<DefaultResponse>,
+                            response: Response<DefaultResponse>
                         ) {
                             //Toast.makeText(applicationContext,response.body()?.message.toString(),Toast.LENGTH_LONG).show()
                             //Log.i("faizanali",response.body()?.message.toString())

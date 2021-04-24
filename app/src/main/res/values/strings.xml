@@ -22,4 +22,8 @@
     <string name="oldUser">Already have an account?</string>
     <string name="longString">This is my long description of my book. I bought it from here and
     all default text is here.</string>
+    <string name="edit_details_of_book">Edit Details of Book</string>
+    <string name="name_of_the_book">Name of the book</string>
+    <string name="description_of_the_book">Description of the book</string>
+    <string name="genre">Genre</string>
 </resources>
