@@ -214,35 +214,35 @@
                     android:inputType="number"
                     android:textColor="@color/black"/>
             </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/updatedPhoneNumber"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/updateBookPrice"
-                app:boxStrokeColor="@color/darkBlue"
-                android:layout_marginStart="@dimen/marginStart"
-                android:layout_marginEnd="@dimen/marginEnd"
-                android:elevation="@dimen/loginElevation"
-                android:hint="Your phone number"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:id="@+id/updatedPhoneNumber"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@+id/updateBookPrice"-->
+<!--                app:boxStrokeColor="@color/darkBlue"-->
+<!--                android:layout_marginStart="@dimen/marginStart"-->
+<!--                android:layout_marginEnd="@dimen/marginEnd"-->
+<!--                android:elevation="@dimen/loginElevation"-->
+<!--                android:hint="Your phone number"-->
+<!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">-->
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvUpdatePhoneNumber"
-                    android:inputType="phone"
-                    android:textSize="16sp"
-                    android:maxLength="10"
-                    android:drawableEnd="@drawable/ic_phone"
-                    android:textColor="@color/black"/>
-            </com.google.android.material.textfield.TextInputLayout>
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:id="@+id/tvUpdatePhoneNumber"-->
+<!--                    android:inputType="phone"-->
+<!--                    android:textSize="16sp"-->
+<!--                    android:maxLength="10"-->
+<!--                    android:drawableEnd="@drawable/ic_phone"-->
+<!--                    android:textColor="@color/black"/>-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
 
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/updateAdBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/updatedPhoneNumber"
+                android:layout_below="@id/updateBookPrice"
                 android:layout_marginStart="@dimen/marginStart"
                 android:layout_marginTop="@dimen/marginTop"
                 android:layout_marginEnd="@dimen/marginEnd"
@@ -251,7 +251,7 @@
                 android:padding="@dimen/drawablePadding"
                 android:textStyle="bold"
                 android:elevation="@dimen/loginElevation"
-                android:text="Update"
+                android:text="@string/update"
                 android:textColor="@color/white"
                 android:textSize="@dimen/btnTextSize" />
 

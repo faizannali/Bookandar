@@ -1,6 +1,5 @@
 package com.codejunction.bookandaar.fragments
 
-import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -10,6 +9,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.codejunction.bookandaar.R
@@ -17,11 +17,18 @@ import com.codejunction.bookandaar.adapters.CategoriesAdapter
 import com.codejunction.bookandaar.adapters.HomeAdapterProduct
 import com.codejunction.bookandaar.models.CategoriesModel
 import com.codejunction.bookandaar.models.HomeProductModel
+import com.codejunction.bookandaar.network.RetrofitClient
+import com.codejunction.bookandaar.repo.AllAdsResponse
+import com.codejunction.bookandaar.repo.Info
 import kotlinx.android.synthetic.main.fragment_home.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class Home : Fragment() {
-    lateinit var filteredList: ArrayList<HomeProductModel>
+    lateinit var filteredList: ArrayList<Info>
+    lateinit var myList: ArrayList<Info>
     private lateinit var adapter: HomeAdapterProduct
     lateinit var preference: SharedPreferences
     override fun onCreateView(
@@ -39,9 +46,7 @@ class Home : Fragment() {
         val name=preference.getString("PHONE_NUMBER","")
         val pass= preference.getString("LOGIN","")
 
-//        location.text=name
-//        tv_location.text=pass
-
+        //this code is for book categories
         val defaultAdList=ArrayList<CategoriesModel>()
         defaultAdList.add(CategoriesModel("Novel","#1D7DEF"))
         defaultAdList.add(CategoriesModel("School","#16056B"))
@@ -59,17 +64,7 @@ class Home : Fragment() {
         val myCategoryAdapter= CategoriesAdapter(requireContext(), defaultAdList)
         categoriesRecycler.adapter=myCategoryAdapter
 
-        init()
-
-
-
-    }
-
-    private fun init() {
-
-        var list: ArrayList<HomeProductModel> = getData()
-//        list.addAll(getData())
-        setupRecyclerView(list)
+        getData()
 
         searchBar?.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(p0: Editable?) {
@@ -81,21 +76,59 @@ class Home : Fragment() {
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 filteredList = ArrayList()
                 if (p0.toString() != "") {
-                    for (item in list) {
-                        if (item.book_name.toLowerCase().contains(p0.toString().toLowerCase())) {
+                    for (item in myList) {
+                        if (item.bookName.toLowerCase().contains(p0.toString().toLowerCase())) {
                             filteredList.add(item)
                         }
                     }
                     setupRecyclerView(filteredList)
                 } else {
-                    setupRecyclerView(list)
+                    setupRecyclerView(myList)
                 }
             }
 
         })
+
+
+
+    }
+    private fun getData(){
+        myList=ArrayList()
+        RetrofitClient.instance.getAllAds().enqueue(object : Callback<AllAdsResponse> {
+            override fun onResponse(
+                call: Call<AllAdsResponse>,
+                response: Response<AllAdsResponse>
+            ) {
+                val bookList = response.body()?.info
+                myList=bookList!!
+
+                adapter = HomeAdapterProduct(requireContext(), bookList!!)
+                //setting up layout manager to recyclerView
+                productRecycler.layoutManager= GridLayoutManager(
+                    requireContext(),2,
+                    LinearLayoutManager.VERTICAL,
+                    false
+                )
+
+                //setting adapter to recyclerView
+                productRecycler.adapter=adapter
+            }
+
+            override fun onFailure(call: Call<AllAdsResponse>, t: Throwable) {
+                Toast.makeText(
+                    requireContext(),
+                    "Check your Internet Connection",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+
+        })
+
+
     }
 
-    private fun setupRecyclerView(list: ArrayList<HomeProductModel>) {
+
+    private fun setupRecyclerView(list: ArrayList<Info>) {
 
         //initlizing adapter
         adapter = HomeAdapterProduct(requireContext(), list)
@@ -112,22 +145,7 @@ class Home : Fragment() {
 
     }
 
-    private fun getData(): ArrayList<HomeProductModel> {
 
-        var productList=ArrayList<HomeProductModel>()
-//        productList.add(HomeProductModel("1000","My NCERT Book","Uttam Nagar","d"))
-//        productList.add(HomeProductModel("2000","Science Book For Sale","JanakPuri"))
-//        productList.add(HomeProductModel("100","BCA Books","Nawada"))
-//        productList.add(HomeProductModel("10000","10th CBSE course","Rajori Garden west"))
-//        productList.add(HomeProductModel("1000","My NCERT Book","Uttam Nagar"))
-//        productList.add(HomeProductModel("2000","Science Book For Sale","JanakPuri"))
-//        productList.add(HomeProductModel("100","BCA Books","Nawada"))
-//        productList.add(HomeProductModel("10000","10th CBSE course","Rajori Garden west"))
-//
-
-        return productList
-
-    }
 
 
 }

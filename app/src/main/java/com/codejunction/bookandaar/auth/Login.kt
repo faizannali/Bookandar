@@ -11,6 +11,7 @@ import com.codejunction.bookandaar.BaseActivity
 import com.codejunction.bookandaar.R
 import com.codejunction.bookandaar.repo.DefaultResponse
 import com.codejunction.bookandaar.network.RetrofitClient
+import com.codejunction.bookandaar.repo.LoginResponse
 import com.codejunction.bookandaar.ui.MainActivity
 import com.codejunction.bookandaar.ui.Welcome
 import kotlinx.android.synthetic.main.activity_login.*
@@ -21,6 +22,7 @@ import retrofit2.Response
 class Login : BaseActivity() {
     lateinit var phoneNum:String
     lateinit var password:String
+    lateinit var fullName:String
     lateinit var sharedPreference: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,29 +55,32 @@ class Login : BaseActivity() {
                     errorSnackBar(contextView,"Enter 10 Digit Number")
                 }else{
                     snackBar(it,"Ready to start api")
-                    RetrofitClient.instance.login(phoneNum,password).enqueue(object :Callback<DefaultResponse>{
-                        override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
+                    RetrofitClient.instance.login(phoneNum,password).enqueue(object :Callback<LoginResponse>{
+                        override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                             toaster(t.message.toString())
                             Log.i("faizan",t.message.toString())
                         }
 
                         override fun onResponse(
-                            call: Call<DefaultResponse>,
-                            response: Response<DefaultResponse>
+                            call: Call<LoginResponse>,
+                            response: Response<LoginResponse>
                         ) {
                             //Toast.makeText(applicationContext,response.body()?.message.toString(),Toast.LENGTH_LONG).show()
                             //Log.i("faizanali",response.body()?.message.toString())
-                            val msg=response.body()?.message
-                            if (msg.equals("user found")){
+                            val msg=response.body()?.fullName
+                            if (msg.equals("User Not Found")){
+                                Toast.makeText(applicationContext,"Check username And Password",Toast.LENGTH_LONG).show()
+
+                            }else{
+                                fullName=msg.toString()
                                 Toast.makeText(applicationContext,"True",Toast.LENGTH_LONG).show()
                                 val editor:SharedPreferences.Editor=sharedPreference.edit()
                                 editor.putString("PHONE_NUMBER",phoneNum)
                                 editor.putString("PASSWORD",password)
+                                editor.putString("FULL_NAME",fullName)
                                 editor.putString("LOGIN","true")
                                 editor.apply()
                                 loginSuccessful()
-                            }else{
-                                Toast.makeText(applicationContext,"false",Toast.LENGTH_LONG).show()
                             }
 
                         }

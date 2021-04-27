@@ -182,8 +182,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:elevation="12dp"
-                android:gravity="center_horizontal">
+                android:elevation="16dp"
+                android:layout_marginTop="40dp"
+                android:gravity="center_horizontal|bottom">
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -214,7 +215,7 @@
                 android:layout_marginBottom="20dp"
                 app:cardCornerRadius="10dp">
                 <TextView
-                    android:id="@+id/call_text"
+                    android:id="@+id/userNameDetails"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Ad posted by"

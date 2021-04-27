@@ -26,4 +26,5 @@
     <string name="name_of_the_book">Name of the book</string>
     <string name="description_of_the_book">Description of the book</string>
     <string name="genre">Genre</string>
+    <string name="update">Update</string>
 </resources>

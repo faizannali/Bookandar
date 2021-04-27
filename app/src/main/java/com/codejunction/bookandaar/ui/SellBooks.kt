@@ -1,7 +1,9 @@
 package com.codejunction.bookandaar.ui
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
 import com.codejunction.bookandaar.BaseActivity
@@ -21,10 +23,13 @@ class SellBooks : BaseActivity() {
     lateinit var bookLocation:String
     lateinit var bookArea:String
     lateinit var bookPrice:String
+    private lateinit var userName:String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sell_books)
+
+        preference=getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
 
         sellBackBtn.setOnClickListener {
             onBackPressed()
@@ -59,12 +64,13 @@ class SellBooks : BaseActivity() {
         }
 
         postAdBtn.setOnClickListener {
-            phoneNum=tvPhone.text.toString()
+            phoneNum=preference.getString("PHONE_NUMBER","").toString()
             bookName=tvNameOfBook.text.toString()
             bookDesc=tvDescOfBook.text.toString()
             bookGenre=tvGenre.text.toString()
             bookLocation=tvBookStateLocation.text.toString()
             bookArea=tvAreaOfBook.text.toString()
+            userName=preference.getString("FULL_NAME","").toString()
 
             if (radioDonateBtn.isChecked){
                 bookPrice="0"
@@ -88,7 +94,7 @@ class SellBooks : BaseActivity() {
                     }
                     else -> {
                         //snackBar(it,"Ready to start Sell Api")
-                        RetrofitClient.instance.postMyAds(phoneNum,bookName,bookDesc,bookGenre,
+                        RetrofitClient.instance.postMyAds(userName,phoneNum,bookName,bookDesc,bookGenre,
                             bookLocation,bookArea,bookPrice).enqueue(object :Callback<DefaultResponse>{
                             override fun onResponse(
                                 call: Call<DefaultResponse>,
@@ -100,7 +106,7 @@ class SellBooks : BaseActivity() {
                             }
 
                             override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
-                                errorSnackBar(it,"Check internet Connection !")
+                                errorSnackBar(it,"Something went wrong! Check Connection")
                             }
 
                         })

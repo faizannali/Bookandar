@@ -215,35 +215,35 @@
                     android:inputType="number"
                     android:textColor="@color/black"/>
             </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/phoneNumber"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/etBookPrice"
-                app:boxStrokeColor="@color/darkBlue"
-                android:layout_marginStart="@dimen/marginStart"
-                android:layout_marginEnd="@dimen/marginEnd"
-                android:elevation="@dimen/loginElevation"
-                android:hint="Your phone number"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:id="@+id/phoneNumber"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@+id/etBookPrice"-->
+<!--                app:boxStrokeColor="@color/darkBlue"-->
+<!--                android:layout_marginStart="@dimen/marginStart"-->
+<!--                android:layout_marginEnd="@dimen/marginEnd"-->
+<!--                android:elevation="@dimen/loginElevation"-->
+<!--                android:hint="Your phone number"-->
+<!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">-->
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvPhone"
-                    android:inputType="phone"
-                    android:textSize="16sp"
-                    android:maxLength="10"
-                    android:drawableEnd="@drawable/ic_phone"
-                    android:textColor="@color/black"/>
-            </com.google.android.material.textfield.TextInputLayout>
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:id="@+id/tvPhone"-->
+<!--                    android:inputType="phone"-->
+<!--                    android:textSize="16sp"-->
+<!--                    android:maxLength="10"-->
+<!--                    android:drawableEnd="@drawable/ic_phone"-->
+<!--                    android:textColor="@color/black"/>-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
 
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/postAdBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/phoneNumber"
+                android:layout_below="@id/etBookPrice"
                 android:layout_marginStart="@dimen/marginStart"
                 android:layout_marginTop="@dimen/marginTop"
                 android:layout_marginEnd="@dimen/marginEnd"

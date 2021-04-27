@@ -43,9 +43,6 @@ class EditProductDetails : BaseActivity() {
         tvUpdatedBookStateLocation.setText(locationOfProduct)
         tvUpdatedAreaOfBook.setText(areaOfProduct)
         tvUpdatedBookPrice.setText(priceOfProduct)
-        tvUpdatePhoneNumber.setText(phoneOfProduct)
-        tvUpdatePhoneNumber.isEnabled=false
-
 
         preference=getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
 

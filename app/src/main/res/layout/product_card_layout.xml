@@ -2,7 +2,7 @@
 <com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="160dp"
-    android:layout_height="wrap_content"
+    android:layout_height="220dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginStart="10dp"
     android:layout_marginBottom="10dp"
@@ -64,11 +64,11 @@
             android:text="New delhi"
             android:textSize="14sp"
             android:layout_below="@id/home_book_name"
-            android:layout_margin="4dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="4dp"
             android:lines="1"
             android:maxLines="1"
-            android:textColor="@color/purple"
-            android:drawableStart="@drawable/ic_location"/>
+            android:textColor="@color/purple" />
 
     </RelativeLayout>
 

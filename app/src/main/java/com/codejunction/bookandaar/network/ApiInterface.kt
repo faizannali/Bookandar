@@ -1,8 +1,7 @@
 package com.codejunction.bookandaar.network
 
-import com.codejunction.bookandaar.repo.DefaultResponse
 import com.codejunction.bookandaar.models.SignUpModel
-import com.codejunction.bookandaar.repo.MyAdsResponse
+import com.codejunction.bookandaar.repo.*
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -23,11 +22,12 @@ interface ApiInterface {
     fun login(
         @Field("phoneNumber") phone: String,
         @Field("password") password: String
-    ):Call<DefaultResponse>
+    ):Call<LoginResponse>
 
     @FormUrlEncoded
     @POST("/postMyAds")
     fun postMyAds(
+        @Field("fullName") userName:String,
         @Field("phoneNumber") phone:String,
         @Field("bookName") bookName:String,
         @Field("bookDesc") bookDesc:String,
@@ -61,6 +61,23 @@ interface ApiInterface {
         @Field("phoneNumber") phone: String,
         @Field("orderId") orderId: Int
     ):Call<DefaultResponse>
+
+    @FormUrlEncoded
+    @POST("/books/updateUserProfile")
+    fun updateUserProfile(
+        @Field("email") email: String,
+        @Field("area") area:String,
+        @Field("phoneNumber") phone: String
+    ):Call<DefaultResponse>
+
+    @FormUrlEncoded
+    @POST("/profileInfo")
+    fun getProfileInfo(
+        @Field("phoneNumber") phone: String
+    ):Call<ProfileInfo>
+
+    @POST("/allAds")
+    fun getAllAds():Call<AllAdsResponse>
 
 
 //    @GET("/v1/latest-news?language=it&apiKey=7goxs3CKQUAJRGhquf6BovIkIToi_vj5Uii2lTrQCVE9EtY2")
